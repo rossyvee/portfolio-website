@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'photogallery.wsgi.application'
+WSGI_APPLICATION = 'photo gallery.wsgi.application'
 
 
 # Database
@@ -86,7 +86,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'photogallery',
+        'NAME': 'photo gallery',
         'USER': 'rose',
         'PASSWORD': 'pass123',
     }
