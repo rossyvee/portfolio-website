@@ -1,0 +1,45 @@
+{%extends 'partials/base.html'%}
+
+{% block content %}
+{{block.super}}
+    <div class="card">
+  <div class="card-header">
+    Photos
+  </div>
+  <div class="card-body">
+      {% if images %}
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Created At</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for photo in images %}
+          <tr>
+            <td>{{ forloop.counter }} </td>
+            <td>{{photo.name}}</td>
+            <td>
+              <img src="{{photo.image.url}}" alt="{{photo.name}}" class="img img-thumbanail" />
+            </td>
+            <td>{{photo.created_at}}</td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  {% else %}
+      <div class="col-md-12 alert alert-info text-center">
+        No images found.
+      </div>
+     {% endif %}
+  </div>
+</div>
+{% endblock %}
