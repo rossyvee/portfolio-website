@@ -28,8 +28,9 @@ class Location(models.Model):
 class Image(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
-    category = models.ForeignKey(Category,on_delete=models.DO_NOTHING)
+    category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     location = models.ForeignKey(Location, on_delete=models.DO_NOTHING)
+    image = models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -37,6 +38,3 @@ class Image(models.Model):
 
     class Meta:
         ordering = ['name']
-
-
-

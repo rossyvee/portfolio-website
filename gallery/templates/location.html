@@ -1,0 +1,42 @@
+{%extends 'partials/base.html'%}
+
+{% block content %}
+{{block.super}}
+    <div class="card">
+  <div class="card-header">
+    Location
+  </div>
+  <div class="card-body">
+      {% if locations %}
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Created At</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for location in locations %}
+          <tr>
+            <td>{{ forloop.counter }} </td>
+            <td>{{location.name}}</td>
+            <td>{{location.created_at}}</td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  {% else %}
+      <div class="col-md-12 alert alert-info text-center">
+        No locations found.
+      </div>
+     {% endif %}
+  </div>
+</div>
+{% endblock %}
