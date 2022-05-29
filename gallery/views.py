@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Category, Location
 
@@ -9,9 +10,13 @@ def index(request):
 
 
 def upload_photo(request):
-    categories = Category.objects.all()
-    locations = Location.objects.all()
-    return render(request, 'upload-photo.html', {"categories": categories, "locations": locations})
+    if request.method == 'POST':
+        return HttpResponse("uploaded successfully!")
+
+    else:
+        categories = Category.objects.all()
+        locations = Location.objects.all()
+        return render(request, 'upload-photo.html', {"categories": categories, "locations": locations})
 
 
 def location(request):
