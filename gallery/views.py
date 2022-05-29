@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Category, Location
+
+from .forms import ImageForm
+from .models import Category, Location, Image
 
 
 # Create your views here.
@@ -9,14 +11,26 @@ def index(request):
     return render(request, 'index.html')
 
 
-def upload_photo(request):
+def photos(request):
+    images = Image.objects.all()
+    return render(request, 'photos.html', {'images': images})
+
+
+def save_image(request):
     if request.method == 'POST':
-        return HttpResponse("uploaded successfully!")
+        form = ImageForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Upload was successful!")
+        return HttpResponse("Form was not valid!")
 
     else:
+        image_form = ImageForm()
         categories = Category.objects.all()
         locations = Location.objects.all()
-        return render(request, 'upload-photo.html', {"categories": categories, "locations": locations})
+        return render(request, 'upload-photo.html',
+                      {"categories": categories, "locations": locations, "form": image_form})
 
 
 def location(request):
