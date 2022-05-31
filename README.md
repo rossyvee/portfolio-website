@@ -43,17 +43,14 @@ Set Up your database User,Password, Host then make migrate
 
 # Make migrations
 python manage.py makemigrations photogallery
+python manage.py migrate 
 
+# Run the application
+python manage.py runserver
+Open the application on your browser 127.0.0.1:8000
 
-## Behaviour Drive and Development
-| Behaviour | Input | Output |
-| :---------------- | :---------------: | ------------------: |
-| Load the page  |Select between signup and login|
-| Select SignUp| **Email**,**Username**,**Password** | Redirect to login|
-| Select Login | **Username** and **password** | Redirect to page with the create blog based on categories and commenting section|
-| Select comment button | **Comment** | Form that you input your comment|
-| Click on submit |  | Redirect to all comments template with your comment and other comments|
-
+## Bugs
+The uploading images is not showing the images properly
   ## Licence
 MIT License
 Copyright (c) [2022] [Roseline Akinyi]
