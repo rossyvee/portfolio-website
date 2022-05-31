@@ -14,7 +14,7 @@ A personal photo gallery that allows users to upload images and share by copying
 A personal photo gallery that allows users to upload images and share by copying the link
 ## Technology Used
 * [Python3.6](https://www.python.org/)
-* [Flask](http://flask.pocoo.org/)
+* [Django](https://www.djangoproject.com/)
 * [Heroku](https://heroku.com)
 ## Requirements
 * A stable internet connection
