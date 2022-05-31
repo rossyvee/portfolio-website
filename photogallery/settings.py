@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9w33(!yf^r)gv75a2j39$c_2ef2)as8rkbw+^7b)q7y=4gd7@6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.localhost', '.herokuapp.com', '.127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -76,24 +76,17 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'photo gallery.wsgi.application'
+WSGI_APPLICATION = 'photogallery.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'photo gallery',
-#         'USER': 'rose',
-#         'PASSWORD': 'pass123',
-#     }
-# }
+
 
 MODE = config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+# SECRET_KEY = config('SECRET_KEY')
+# DEBUG = config('DEBUG', default=False, cast=bool)
 # development
 if config('MODE') == "dev":
     DATABASES = {
@@ -110,10 +103,15 @@ if config('MODE') == "dev":
 # production
 else:
     DATABASES = {
-        'default': dj_database_url.config(
-            default=config('DATABASE_URL')
-        )
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'photogallery',
+            'USER': 'rose',
+            'PASSWORD': 'pass123',
+        }
     }
+
+
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
