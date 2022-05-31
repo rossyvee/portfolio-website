@@ -11,8 +11,7 @@ A personal photo gallery that allows users to upload images and share by copying
 + [Authors Info](#aut)
 
 ## Description
-An application that allows users to share thoughts through blogging and make comments about other authors or bloggers posts
-
+A personal photo gallery that allows users to upload images and share by copying the link
 ## Technology Used
 * [Python3.6](https://www.python.org/)
 * [Flask](http://flask.pocoo.org/)
