@@ -39,9 +39,11 @@ source virtual/bin/activate
 
 pip install -r requirements.txt
 
-alternatively run (make sure the virtual environment is activated)
+Set Up your database User,Password, Host then make migrate
 
-python3 manage.py 
+# Make migrations
+python manage.py makemigrations photogallery
+
 
 ## Behaviour Drive and Development
 | Behaviour | Input | Output |
