@@ -25,12 +25,14 @@ A personal photo gallery that allows users to upload images and share by copying
 * Search for different categories
 * View photos based on the location they were taken.
 ## set up instruction and installation
- 1. clone this repository to a folder https://github.com/rossyvee/personal--blog
+To get to this project
+ 1. clone this repository to a folder https://github.com/rossyvee/portfolio-website
  2. Extract the cloned file and install requirements
-* cd the folder then open the personal blog
+* cd the folder then open the portfolio-website
 * pip install -r requirements.txt
   3. Export configurations
   4. python3 -m venv virtual --without-pip
+  5. Activate the virtual environment source virtual/bin/activate
 # Running the application locally
 
 source virtual/bin/activate
