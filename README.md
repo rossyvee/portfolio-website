@@ -20,9 +20,10 @@ A personal photo gallery that allows users to upload images and share by copying
 * A stable internet connection
 ## User Story
 * View different photos that interest them
-Click a single image to expand it and view the details of that photo
+* Click a single image to expand it and view the details of that photo
+* Copy a link to the photo to share with my friends.
 Search for different categories
-Copy a link to the photo to share with my friends.
+
 View photos based on the location they were taken.
 ## set up instruction and installation
  1. clone this repository to a folder https://github.com/rossyvee/personal--blog
