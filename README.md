@@ -19,10 +19,11 @@ A personal photo gallery that allows users to upload images and share by copying
 ## Requirements
 * A stable internet connection
 ## User Story
-* Comment on the different blog posted by other user.
-* See the blogs posted by other users and allow others to comment.
-* Allows other users to sign up for notifications
-* Register to be allowed to log in to the application
+* View different photos that interest them
+Click a single image to expand it and view the details of that photo
+Search for different categories
+Copy a link to the photo to share with my friends.
+View photos based on the location they were taken.
 ## set up instruction and installation
  1. clone this repository to a folder https://github.com/rossyvee/personal--blog
  2. Extract the cloned file and install requirements
