@@ -1,0 +1,32 @@
+
+{%extends 'partials/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card mb-3 w-50 mx-auto">
+    <img src="{{image.image.url}}" class="card-img-top" alt="{{image.image.url}}"/>
+    <div class="card-body">
+      <h5 class="card-title">{{image.category.name}}</h5>
+      <p class="card-text">
+        {{image.description}}
+      </p>
+      <p class="card-text">
+        <small class="text-muted">Last updated {{image.created_at|timesince}}</small>
+      </p>
+      <div><button class="btn btn-primary" onclick="copyToClipboard('{{image.image.url}}')">copy link</button></div>
+    </div>
+  </div>
+
+
+  <script>
+    function copyToClipboard(data) {
+      // var copyText = document.getElementById("content").value;
+      navigator.clipboard.writeText(window.location.origin+data).then(() => {
+          // Alert the user that the action took place.
+          // Nobody likes hidden stuff being done under the hood!
+          alert("Copied to clipboard");
+      });
+    }
+  </script>
+  
+  {%endblock%}

@@ -9,6 +9,9 @@ urlpatterns = [
     path('category/', views.category, name='category'),
     path('location/', views.location, name='location'),
     path('photos/', views.photos, name='photos'),
+    path('search', views.search_results,name='search'),
+    path('single/<int:id>',views.display_mod,name='single')
+    
 ]
 
 
