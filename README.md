@@ -12,6 +12,8 @@ A personal photo gallery that allows users to upload images and share by copying
 
 ## Description
 A personal photo gallery that allows users to upload images and share by copying the link
+## Live Link
+http://127.0.0.1:8000/
 ## Technology Used
 * [Python3.6](https://www.python.org/)
 * [Django](https://www.djangoproject.com/)
